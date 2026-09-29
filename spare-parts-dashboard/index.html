@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设备备件耗材管理系统</title>
+  <script>
+    // 样式每次强制取最新（防浏览器缓存旧 CSS）
+    document.write('<link rel="stylesheet" href="styles.css?t=' + Date.now() + '"\/>');
+  </script>
+</head>
+<body>
+  <div class="app">
+    <!-- 顶部 Banner -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-title">
+          <div class="logo">SPM</div>
+          <div>
+            <h1>设备备件耗材管理系统</h1>
+            <p>焊线工序 / 耦合段备件库存实时监控与安全预警</p>
+          </div>
+        </div>
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          <span>数据已连接 · <b id="connCount">84</b> 条备件</span>
+          <span class="meta-line" id="metaLine">数据版本 v2 · 更新于 2026-09-20</span>
+        </div>
+      </div>
+
+      <!-- 数据源同步提示：检测到数据源版本更新时自动显示 -->
+      <div class="sync-bar" id="syncBar"></div>
+
+      <!-- 统计卡 -->
+      <div class="statbar" id="statbar">
+        <div class="statcard">
+          <div class="statnum" id="stTotal">84</div>
+          <div class="statlabel">物料总数</div>
+        </div>
+        <div class="statcard alert">
+          <div class="statnum" id="stLow">0</div>
+          <div class="statlabel">低于安全库存</div>
+        </div>
+        <div class="statcard warn">
+          <div class="statnum" id="stAuto">0</div>
+          <div class="statlabel">待校准安全线</div>
+        </div>
+        <div class="statcard">
+          <div class="statnum" id="stStock">0</div>
+          <div class="statlabel">当前总库存</div>
+        </div>
+        <div class="statcard">
+          <div class="statnum" id="stProc">2</div>
+          <div class="statlabel">涉及工序</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 导航 -->
+    <nav class="tabbar">
+      <button class="tab active" data-tab="dashboard">库存看板</button>
+      <button class="tab" data-tab="ledger">库存台账</button>
+      <button class="tab" data-tab="import">链接使用表</button>
+      <button class="tab" data-tab="usage">使用履历</button>
+      <button class="tab" data-tab="log">变动流水</button>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="main">
+      <!-- 库存看板 -->
+      <section id="dashboard" class="panel active">
+        <div class="panel-header">
+          <h2>各工序备件存量</h2>
+          <div class="filters">
+            <input id="dQ" class="search" placeholder="搜索物料 / 设备…">
+            <select id="dProc" class="select"></select>
+            <label class="check"><input type="checkbox" id="dLow"> 仅看缺货</label>
+          </div>
+        </div>
+        <div id="equipStatusCards" class="equip-cards"></div>
+        <div id="dashBody" class="dash-body"></div>
+      </section>
+
+      <!-- 库存台账 -->
+      <section id="ledger" class="panel">
+        <div class="panel-header">
+          <h2>库存台账</h2>
+          <div class="actions">
+            <button class="btn secondary" id="btnBatch">批量校准安全线</button>
+            <button class="btn primary" id="btnAdd">新增物料</button>
+            <button class="btn ghost" id="btnExport">导出 Excel</button>
+          </div>
+        </div>
+        <div class="filters">
+          <input id="lQ" class="search" placeholder="搜索物料 / 设备 / 工序…">
+          <select id="lProc" class="select"></select>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="ledgerTable">
+            <thead>
+              <tr>
+                <th>工序</th>
+                <th>设备</th>
+                <th>物料名称</th>
+                <th>单位</th>
+                <th>当前库存</th>
+                <th>安全库存</th>
+                <th>差值</th>
+                <th>使用次数</th>
+                <th>状态</th>
+                <th>备注</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 链接使用表 -->
+      <section id="import" class="panel">
+        <div class="panel-header">
+          <h2>链接使用表</h2>
+          <span class="sub">上传领用/使用表 Excel，自动匹配物料并更新库存</span>
+        </div>
+        <div class="import-grid">
+          <div class="card upload-zone" id="dropZone">
+            <div class="upload-icon">📎</div>
+            <p>拖拽 Excel 文件到此处，或 <label class="link"><input type="file" id="fileInput" accept=".xlsx,.xls,.csv">点击选择</label></p>
+            <p class="muted">支持 .xlsx / .xls / .csv</p>
+          </div>
+          <div class="card mapping-card" id="mappingCard">
+            <h3>列匹配</h3>
+            <div class="field-row">
+              <label>物料名称列</label>
+              <select id="mName" class="select"></select>
+            </div>
+            <div class="field-row">
+              <label>数量列</label>
+              <select id="mQty" class="select"></select>
+            </div>
+            <div class="field-row">
+              <label>方向</label>
+              <select id="mDir" class="select">
+                <option value="out">使用/出库（扣减库存）</option>
+                <option value="in">入库/采购（增加库存）</option>
+              </select>
+            </div>
+            <div class="field-row">
+              <label>表头行</label>
+              <input id="mHeader" class="input" type="number" value="1" min="1">
+            </div>
+            <button class="btn primary" id="btnPreview">预览匹配结果</button>
+          </div>
+        </div>
+        <div class="card" id="previewCard" style="display:none">
+          <h3>匹配预览</h3>
+          <div class="table-wrap">
+            <table class="data-table" id="previewTable">
+              <thead>
+                <tr><th>Excel 行</th><th>物料名称</th><th>数量</th><th>当前库存</th><th>更新后库存</th><th>匹配状态</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="panel-actions">
+            <button class="btn primary" id="btnApply">确认更新库存</button>
+            <button class="btn ghost" id="btnCancelPreview">取消</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 使用履历 -->
+      <section id="usage" class="panel">
+        <div class="panel-header">
+          <h2>使用履历</h2>
+          <span class="sub">设备备件更换记录（来自手写履历表）· 拍照后可由 AI 转写导入</span>
+          <div class="actions">
+            <button class="btn secondary" id="btnUsageImport">📷 看图转化导入</button>
+            <button class="btn primary" id="btnUsageAdd">新增记录</button>
+            <button class="btn ghost" id="btnUsageExport">导出 Excel</button>
+          </div>
+        </div>
+        <div class="filters">
+          <input id="uQ" class="search" placeholder="搜索备件 / 设备 / 更换原因 / 接单人…">
+          <select id="uEq" class="select"></select>
+          <select id="uPart" class="select"></select>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="usageTable">
+            <thead>
+              <tr>
+                <th data-sort="date" data-label="日期">日期 ↕</th>
+                <th data-sort="equipment" data-label="设备名称">设备名称 ↕</th>
+                <th data-sort="model" data-label="设备型号">设备型号 ↕</th>
+                <th data-sort="part" data-label="备件名称">备件名称 ↕</th>
+                <th data-sort="reason" data-label="更换原因">更换原因</th>
+                <th data-sort="preventive" data-label="预防措施">预防措施</th>
+                <th data-sort="maintTime" data-label="维修时间">维修时间 ↕</th>
+                <th data-sort="handler" data-label="接单人">接单人 ↕</th>
+                <th data-sort="other" data-label="其他建议">其他建议</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 变动流水 -->
+      <section id="log" class="panel">
+        <div class="panel-header">
+          <h2>变动流水</h2>
+          <button class="btn ghost" id="btnClearLog">清空流水</button>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal: 物料编辑/新增 -->
+  <div class="modal" id="itemModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="itemModalTitle">新增物料</h3>
+        <button class="close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-grid">
+          <div class="field"><label>工序</label><input id="iProc" class="input"></div>
+          <div class="field"><label>设备/机台</label><input id="iEq" class="input"></div>
+          <div class="field"><label>物料名称</label><input id="iName" class="input"></div>
+          <div class="field"><label>单位</label><input id="iUnit" class="input" value="个"></div>
+          <div class="field"><label>当前库存</label><input id="iStock" class="input" type="number" min="0"></div>
+          <div class="field"><label>安全库存</label><input id="iSafety" class="input" type="number" min="0"></div>
+          <div class="field full"><label>备注</label><input id="iNote" class="input"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn ghost" data-close>取消</button>
+        <button class="btn primary" id="btnSaveItem">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: 入库/出库 -->
+  <div class="modal" id="ioModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="ioTitle">入库</h3>
+        <button class="close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="muted" id="ioItemName"></p>
+        <div class="field"><label>数量</label><input id="ioQty" class="input" type="number" min="1" value="1"></div>
+        <div class="field"><label>单号 / 说明</label><input id="ioRef" class="input" placeholder="如：领用单2024091701"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn ghost" data-close>取消</button>
+        <button class="btn primary" id="btnConfirmIO">确认</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: 批量校准 -->
+  <div class="modal" id="batchModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>批量校准安全线</h3>
+        <button class="close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="field"><label>作用范围</label><select id="bScope" class="select"></select></div>
+        <div class="field"><label>安全库存标准</label><input id="bVal" class="input" type="number" min="0" value="5"></div>
+        <p class="muted">将把选中范围内的所有物料安全库存设为该值，并标记为手动设定（不再显示橙色默认）。</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn ghost" data-close>取消</button>
+        <button class="btn primary" id="btnApplyBatch">应用</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: 使用履历 新增/编辑 -->
+  <div class="modal" id="usageModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="usageModalTitle">新增使用记录</h3>
+        <button class="close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-grid">
+          <div class="field"><label>日期</label><input id="uDate" class="input" placeholder="如 9.28"></div>
+          <div class="field"><label>设备名称</label><input id="uEquipment" class="input" placeholder="如 DB 3#"></div>
+          <div class="field"><label>设备型号</label><input id="uModel" class="input" placeholder="如 DA403.D"></div>
+          <div class="field"><label>备件名称</label><input id="uPart" class="input" placeholder="如 PA PD喷嘴"></div>
+          <div class="field full"><label>更换原因</label><input id="uReason" class="input" placeholder="如 百转破损 / 服役到期"></div>
+          <div class="field full"><label>预防措施</label><input id="uPreventive" class="input" placeholder="选填"></div>
+          <div class="field"><label>维修时间</label><input id="uMaintTime" class="input" placeholder="如 9.28"></div>
+          <div class="field"><label>接单人</label><input id="uHandler" class="input" placeholder="选填"></div>
+          <div class="field full"><label>其他建议</label><input id="uOther" class="input" placeholder="选填"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn ghost" data-close>取消</button>
+        <button class="btn primary" id="btnSaveUsage">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: 看图转化导入 -->
+  <div class="modal" id="ocrModal">
+    <div class="modal-card wide">
+      <div class="modal-header">
+        <h3>📷 看图转化导入</h3>
+        <button class="close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="muted ocr-desc" style="font-size:13px;line-height:1.8">
+          ① 把履历表照片<strong>贴进来</strong>（Ctrl+V）或拖拽到下方<br>
+          ② 点「识别图片」，自动复制 → 切到 WorkBuddy 对话框粘贴给我<br>
+          ③ 我识别后返回数据，回到这里粘贴 → 预览编辑 → 确认导入
+        </p>
+
+        <!-- 图片预览区 -->
+        <div id="ocrImageArea" class="ocr-drop-zone">
+          <div id="ocrDropHint" class="ocr-drop-hint">
+            <span class="ocr-drop-icon">📷</span>
+            <span>粘贴或拖拽履历表图片到这里</span>
+          </div>
+          <img id="ocrImagePreview" style="display:none;max-width:100%;max-height:300px;border-radius:8px;">
+        </div>
+        <div class="panel-actions" style="margin-top:8px">
+          <button class="btn primary" id="btnOcrRecognize" style="display:none">🔍 识别图片</button>
+          <button class="btn ghost" id="btnOcrClearImg">清除图片</button>
+        </div>
+        <div id="ocrHint" style="display:none;margin-top:8px;padding:10px 14px;background:#e8f0fe;border-radius:8px;font-size:13px;color:#1e4a7e">
+          ✅ 图片已复制到剪贴板！请切到 <b>WorkBuddy 对话框</b>，按 Ctrl+V 粘贴给我识别。识别完成后回到这里粘贴 JSON。
+        </div>
+        <div id="ocrJsonArea" style="display:none;margin-top:12px">
+          <label style="font-size:13px;color:var(--text2);font-weight:600">粘贴我识别后返回的 JSON 数据：</label>
+          <textarea id="ocrPaste" class="ocr-textarea" rows="6" spellcheck="false"
+            placeholder='[{"date":"9.28","equipment":"DB3#","model":"DA403D","part":"PA PD吸嘴","reason":"磨损","maintTime":"9.28","handler":"雷雨"}]'></textarea>
+          <div class="panel-actions" style="margin-top:8px">
+            <button class="btn primary" id="btnOcrPreview">预览 → 可编辑</button>
+          </div>
+        </div>
+
+        <!-- 转写结果区（直接显示，可编辑） -->
+        <div id="ocrResultBox" style="display:none;margin-top:16px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <h3 style="margin:0;font-size:15px">转写结果（可直接在表格中修改）</h3>
+            <span class="muted" id="ocrResultCount"></span>
+          </div>
+          <div class="table-wrap" style="max-height:400px;overflow:auto">
+            <table class="data-table" id="ocrResultTable">
+              <thead>
+                <tr>
+                  <th>日期</th><th>设备名称</th><th>型号</th><th>备件名称</th><th>更换原因</th><th>预防措施</th><th>维修时间</th><th>接单人</th><th>其他建议</th><th>操作</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="panel-actions" style="margin-top:12px">
+            <button class="btn primary" id="btnOcrApply">✅ 确认导入</button>
+            <button class="btn ghost" id="btnOcrCancel">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script>
+    // 数据源/逻辑/样式每次强制取最新（防浏览器缓存旧文件）
+    document.write('<script src="seed.js?t=' + new Date().getTime() + '"><\/script>');
+    document.write('<script src="usage_seed.js?t=' + new Date().getTime() + '"><\/script>');
+    document.write('<script src="app.js?t=' + new Date().getTime() + '"><\/script>');
+  </script>
+</body>
+</html>

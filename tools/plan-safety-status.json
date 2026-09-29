@@ -1,0 +1,626 @@
+{
+  "mode": "ops",
+  "label": "9月盘点：安全库存改为实值，新增设备生产状态",
+  "updatedAt": "2026-09-28",
+  "sources": [
+    "DBWB耗材盘点.xlsx（9月，安全库存数量列）"
+  ],
+  "ops": [
+    {
+      "op": "meta",
+      "id": "P0001",
+      "set": {
+        "safety": 5
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0002",
+      "set": {
+        "safety": 5
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0003",
+      "set": {
+        "safety": 2
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0004",
+      "set": {
+        "safety": 2
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0005",
+      "set": {
+        "safety": 2
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0006",
+      "set": {
+        "safety": 2
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0007",
+      "set": {
+        "safety": 2
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0008",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0009",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0010",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0011",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0012",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0013",
+      "set": {
+        "safety": 6
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0014",
+      "set": {
+        "safety": 6
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0015",
+      "set": {
+        "safety": 6
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0016",
+      "set": {
+        "safety": 6
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0017",
+      "set": {
+        "safety": 6
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0018",
+      "set": {
+        "safety": 6
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0019",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0020",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0021",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0022",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0023",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0024",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0025",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0026",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0027",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0028",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0029",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0030",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0031",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0032",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0033",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0034",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0035",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0036",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0037",
+      "set": {
+        "safety": 4
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0038",
+      "set": {
+        "safety": 5
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0039",
+      "set": {
+        "safety": 5
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0040",
+      "set": {
+        "safety": 5
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0041",
+      "set": {
+        "safety": 5
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0042",
+      "set": {
+        "safety": 5
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0043",
+      "set": {
+        "safety": 5
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0044",
+      "set": {
+        "safety": 10
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0001",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0002",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0003",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0004",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0005",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0006",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0007",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0008",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0009",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0010",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0011",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0012",
+      "set": {
+        "status": "主要生产COC共晶，其他备件需求量低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0013",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0014",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0015",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0016",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0017",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0018",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0019",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0020",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0021",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0022",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0023",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0024",
+      "set": {
+        "status": "生产中"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0025",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0026",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0027",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0028",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0029",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0030",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0031",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0032",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0033",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0034",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0035",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0036",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0037",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0038",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0039",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0040",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0041",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0042",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0043",
+      "set": {
+        "status": "非生产机台，备件需求低"
+      }
+    },
+    {
+      "op": "meta",
+      "id": "P0044",
+      "set": {
+        "status": "生产中"
+      }
+    }
+  ]
+}

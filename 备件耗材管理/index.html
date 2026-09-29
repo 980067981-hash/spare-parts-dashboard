@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>设备备件耗材管理系统</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">⚙️</span>
+    <div>
+      <h1>设备备件耗材管理</h1>
+      <p class="sub">焊线工序(DBWB) · 耦合段 备件库存与安全库存看板</p>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-view="dashboard">📊 库存看板</button>
+    <button class="tab" data-view="ledger">📒 库存台账</button>
+    <button class="tab" data-view="import">🔗 链接使用表</button>
+    <button class="tab" data-view="log">🧾 变动流水</button>
+  </nav>
+  <div class="top-actions">
+    <button id="btnExport" class="btn ghost" title="导出当前台账为Excel">⬇ 导出Excel</button>
+    <button id="btnReset" class="btn ghost" title="恢复为初始种子数据">↺ 重置数据</button>
+  </div>
+</header>
+
+<main id="main"></main>
+
+<!-- 通用弹窗 -->
+<div id="modalRoot" class="modal-root hidden">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal" id="modalBox"></div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="vendor/xlsx.full.min.js"></script>
+<script src="seed.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

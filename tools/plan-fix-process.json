@@ -1,0 +1,12 @@
+{
+  "mode": "ops",
+  "label": "修正工序映射：DBWB=固晶, ASM焊线=焊线",
+  "updatedAt": "2026-09-28",
+  "sources": ["用户确认"],
+  "ops": [
+    {"op": "meta", "equipment": "创世杰", "set": {"process": "固晶工序(DBWB)"}},
+    {"op": "meta", "equipment": "普莱信", "set": {"process": "固晶工序(DBWB)"}},
+    {"op": "meta", "equipment": "微见", "set": {"process": "固晶工序(DBWB)"}},
+    {"op": "meta", "equipment": "ASM焊线", "set": {"process": "焊线工序"}}
+  ]
+}

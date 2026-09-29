@@ -1,0 +1,720 @@
+{
+  "dbwb": [
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "LD吸嘴",
+      "stock": 9,
+      "note": "ESD未过8个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "COC吸嘴",
+      "stock": 1,
+      "note": "ESD未过10个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "DRI/PIC吸嘴",
+      "stock": 4,
+      "note": "ESD未过21个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "TIA吸嘴",
+      "stock": 4,
+      "note": "ESD未过21个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "PD吸嘴",
+      "stock": 4,
+      "note": "ESD未过21个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "NTC/MPD吸嘴",
+      "stock": 4,
+      "note": "ESD未过14个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "ISO吸嘴",
+      "stock": 4,
+      "note": "ESD未过22个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "DRI点胶头",
+      "stock": 4,
+      "note": "ESD未过23个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "COC点胶头",
+      "stock": 4,
+      "note": "ESD未过23个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "TIA点胶头",
+      "stock": 4,
+      "note": "ESD未过22个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "PD点胶头",
+      "stock": 4,
+      "note": "ESD未过23个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "创世杰",
+      "name": "NTC/MPD点胶头",
+      "stock": 27,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "DRI/PIC吸嘴",
+      "stock": 15,
+      "note": "ESD未过4个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "COC吸嘴",
+      "stock": 13,
+      "note": "ESD未过4个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "TIA吸嘴",
+      "stock": 8,
+      "note": "ESD未过4个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "PD吸嘴",
+      "stock": 7,
+      "note": "ESD未过4个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "NTC/MPD吸嘴",
+      "stock": 14,
+      "note": "ESD未过4个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "ISO吸嘴",
+      "stock": 8,
+      "note": "ESD未过4个不包含在内"
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "DRI点胶头",
+      "stock": 13,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "COC点胶头",
+      "stock": 14,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "TIA点胶头",
+      "stock": 13,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "PD点胶头",
+      "stock": 10,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "NTC/MPD点胶头",
+      "stock": 8,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "普莱信",
+      "name": "ISO点胶头",
+      "stock": 12,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "DRI/PIC吸嘴",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "COC吸嘴",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "TIA吸嘴",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "PD吸嘴",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "NTC/MPD吸嘴",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "ISO吸嘴",
+      "stock": 4,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "LD吸嘴",
+      "stock": 4,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "DRI点胶头",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "COC点胶头",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "TIA点胶头",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "PD点胶头",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "NTC/MPD点胶头",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "ISO点胶头",
+      "stock": 4,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "顶针17°*10*0.150",
+      "stock": 8,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "顶针17°*10*0.05",
+      "stock": 36,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "顶针17°*15*0.125",
+      "stock": 1,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "顶针1700-10-0.7-0.025",
+      "stock": 20,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "顶针17°*10*0.075",
+      "stock": 3,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "微见",
+      "name": "1700*0.7*10*0.1",
+      "stock": 3,
+      "note": ""
+    },
+    {
+      "process": "焊线工序(DBWB)",
+      "equipment": "ASM焊线",
+      "name": "30孔径瓷嘴",
+      "stock": 41,
+      "note": "c301"
+    }
+  ],
+  "coupling": [
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "定位销",
+      "stock": 102,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "304圆头圆柱销",
+      "stock": 50,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "FA400G加电板",
+      "stock": 27,
+      "note": "含5个待维修"
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "FA800G加电板",
+      "stock": 21,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "黑弹簧",
+      "stock": 30,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "弹簧",
+      "stock": 18,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "卡簧",
+      "stock": 16,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "垫圈",
+      "stock": 15,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "lens400G加电板",
+      "stock": 14,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "lens800G加电板",
+      "stock": 13,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "左FA固定块",
+      "stock": 12,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "光纤抬板",
+      "stock": 10,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "拔珠顶丝",
+      "stock": 10,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "软管接头",
+      "stock": 10,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "微型接头",
+      "stock": 8,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "转轴板",
+      "stock": 8,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "密封件组件",
+      "stock": 8,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "UV固定块（400G）",
+      "stock": 7,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "吸嘴",
+      "stock": 7,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "UV连接架（400G）",
+      "stock": 6,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "UV连接架（800G）",
+      "stock": 6,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "UV连接滑轨",
+      "stock": 6,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "玻璃块",
+      "stock": 6,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "限位块",
+      "stock": 6,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "DR8限位块",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "固定吸嘴",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "适配器固定",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "UV灯头",
+      "stock": 5,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "限位调节片",
+      "stock": 4,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "定位垫片",
+      "stock": 4,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "lens吸嘴",
+      "stock": 4,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "绝缘垫片",
+      "stock": 4,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "MT限位块",
+      "stock": 4,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "适配管",
+      "stock": 4,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "FA固定板",
+      "stock": 3,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "活动夹爪",
+      "stock": 3,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "微型接头（直通）",
+      "stock": 3,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "微型接头（1转2）",
+      "stock": 3,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "活塞缸限位",
+      "stock": 3,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "固定块",
+      "stock": 3,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "固化压头支架",
+      "stock": 2,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "磁铁",
+      "stock": 2,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "o型圈",
+      "stock": 2,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "防UV眼镜",
+      "stock": 2,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "绝缘垫",
+      "stock": 2,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "浮动连接头",
+      "stock": 2,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "料盘组件",
+      "stock": 2,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "2DR4",
+      "stock": 2,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "延长线",
+      "stock": 2,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "磁性开关",
+      "stock": 2,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "UV固定块（800G）",
+      "stock": 1,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "UV安装块",
+      "stock": 1,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "夹爪安装座",
+      "stock": 1,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "擦胶固定块",
+      "stock": 1,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "MPO夹爪安装座",
+      "stock": 1,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "TX夹爪",
+      "stock": 1,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "大容量定位片",
+      "stock": 1,
+      "note": ""
+    },
+    {
+      "process": "耦合段",
+      "equipment": "耦合段机台",
+      "name": "58 种",
+      "stock": 505,
+      "note": ""
+    }
+  ]
+}
