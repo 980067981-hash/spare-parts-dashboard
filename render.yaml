@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: spare-parts-dashboard
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd server && npm install --production
+    startCommand: cd server && node index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
